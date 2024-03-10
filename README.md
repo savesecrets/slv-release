@@ -14,7 +14,7 @@ brew install savesecrets/tap/slv
 ```
 You can also use SLV with Docker by running the following command
 ```zsh
-docker run -it --rm -v $PWD:/data ghcr.io/savesecrets/slv:latest
+docker run -it --rm -v $PWD:/workspace ghcr.io/savesecrets/slv:latest version
 ```
 
 ## Usage
@@ -80,8 +80,6 @@ Shared vault: test.slv.yaml
 Once shared, the other environments can access the vault using their respective secret keys
 
 ## Integrations
-Some of the integrations that SLV supports currently are:
-- GitHub Actions
-    - [`slv-setup-action`](https://github.com/savesecrets/slv-setup-action)
-    - [`slv-secrets-action`](https://github.com/savesecrets/slv-secrets-action)
+Some of the integrations that SLV currently supports are:
 - [Kubernetes Operator](/operator/README.md)
+- [GitHub Actions](https://github.com/savesecrets/slv-action)
