@@ -8,11 +8,36 @@ SLV is designed based on the following **key principles**
 ## Installation
 Download the latest SLV binary from the [releases](https://github.com/savesecrets/slv/releases/latest) page and add it to your path.
 
-SLV can also be installed with brew using the following command
+#### Homebrew
+SLV can be installed with brew using the following command on macOS
 ```zsh
 brew install savesecrets/tap/slv
 ```
-You can also use SLV with Docker by running the following command
+
+### Install Script
+
+#### Install Latest Version
+**With Shell (MacOs/Linux):**
+```sh
+curl -fsSL https://savesecrets.org/slv/install.sh | sh
+```
+**With PowerShell (Windows):**
+```powershell
+irm https://savesecrets.org/slv/install.ps1 | iex
+```
+
+#### Install Specific Version
+**With Shell (MacOs/Linux):**
+```sh
+curl -fsSL https://savesecrets.org/slv/install.sh | sh -s v0.1.7
+```
+**With PowerShell (Windows):**
+```powershell
+$v="0.1.7"; irm https://savesecrets.org/slv/install.ps1 | iex
+```
+
+#### Docker
+You can also run SLV without installing using Docker:
 ```zsh
 docker run -it --rm -v $PWD:/workspace ghcr.io/savesecrets/slv:latest version
 ```
