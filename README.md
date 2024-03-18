@@ -1,5 +1,5 @@
 # SLV - Secure Local Vault
-Securely store, share and consume secrets alongside code.
+Securely store, share, and access secrets alongside the codebase.
 
 SLV is designed based on the following **key principles**
  - Anyone can add or update secrets, however will not be able to read them unless they have access to the vault
@@ -8,7 +8,7 @@ SLV is designed based on the following **key principles**
 ## Installation
 Download the latest SLV binary from the [releases](https://github.com/savesecrets/slv/releases/latest) page and add it to your path.
 
-#### Homebrew
+### Homebrew
 SLV can be installed with brew using the following command on macOS
 ```zsh
 brew install savesecrets/tap/slv
@@ -36,7 +36,7 @@ curl -fsSL https://savesecrets.org/slv/install.sh | sh -s v0.1.7
 $v="0.1.7"; irm https://savesecrets.org/slv/install.ps1 | iex
 ```
 
-#### Docker
+### Docker
 You can also run SLV without installing using Docker:
 ```zsh
 docker run -it --rm -v $PWD:/workspace ghcr.io/savesecrets/slv:latest version
@@ -55,14 +55,14 @@ Created profile:  amagi
 ```sh
 $ slv env new service -n alice -e alice@example.com --add
 
-ID (Public Key):  SLV_EPK_AEAUKAELRTIL2YIXNP7NYTYQMHUX77BWK2LXSKXN4GHSUECDNEJ7XFECLE
+ID (Public Key):  SLV_EPK_AEAUKAAAAD6XTJCYBCIHYKDPPHQN3YNDEVBOFCOIVDMGESLJFH65KG3VULVBK
 Name:             alice
 Email:            alice@example.com
 Tags:             []
+------------------------------------------------------------
+Env Definition:  SLV_EDS_AF4JYNGKJ5FYMMA4YDY7P4R3JOLYPHWDJZWW57U35FBB26MSWV7MQYC3UIUUT5G6IOROHF7P44N5J7XGTWKXQAUBV3LJGUDSUKBA5ESSJL473NNP2KI2KZJRJKXFJ4OS3TDIMC6N3IWG2S6NT5Z5DVKVK3OB6ZL62NB23GMEAQNBGEAIDDXSYQQCEIMOP773BG7UYWB4H3MI64F5PD2OO4XJBXL6HT7XM3PIBRG57MCDVNBLPYZBPX25TSAQB7H4AYAAB777D2YDPOA
 
-Env Definition:  SLV_EDS_AF4JYNGKIFVYGMAYQDQ774U5MUDRSBDSTK5G7UZFBPMYYW5ECRETKSBAKFISVFOS75PKJ5HY6I7FPEHHSN3S3MY3KAUPSX4DSI2QSJQVJOIP7KUCY522DBJEUJLPLT3XLZUUFUT7CZZV2MRNLY77HMWC5RO6AF6RD6MHDBAIQQERMKAY55NAWELAGDHD766NLZGJRPD5NHD3BP3BKXN3J26FZ3V4GK6TF5AA7RYI4Q6K5LVTOPVINTQNHVIIBWZ5AAAP775I7Q3QS
-
-Secret Key: SLV_ESK_AEAEKAHBIONE3QIIWFXFRNJPE6A6AYL527QW4OF4HWWFDOE5E4XR5LO2WI
+Secret Key:	 SLV_ESK_AEAEKAAATI5CXB7QMFSUGY4RUT6UTUSK7SGMIECTJKRTQBFY6BN5ZV5M5XGF6DWLV2RVCJJSMXH43DJ6A5TK7Y6L6PYEMCDGQRBX46GUQPUIYUQ
 ```
 
 #### Create a vault
@@ -89,7 +89,7 @@ Added secret: db_password to vault: test.slv.yaml
 #### Get secrets from the vault
 Set the environment variable `SLV_ENV_SECRET_KEY` to the secret key generated in the previous step
 ```sh
-$ export SLV_ENV_SECRET_KEY=SLV_ESK_AEAEKAHBIONE3QIIWFXFRNJPE6A6AYL527QW4OF4HWWFDOE5E4XR5LO2WI
+$ export SLV_ENV_SECRET_KEY=SLV_ESK_AEAEKAAATI5CXB7QMFSUGY4RUT6UTUSK7SGMIECTJKRTQBFY6BN5ZV5M5XGF6DWLV2RVCJJSMXH43DJ6A5TK7Y6L6PYEMCDGQRBX46GUQPUIYUQ
 $ slv vault get -v test.slv.yaml -n db_password
 
 super_secret_pwd
